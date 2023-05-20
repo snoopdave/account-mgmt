@@ -1,29 +1,19 @@
-import csv from 'csv-parser';
 import fs from 'fs';
-import {promisify} from 'util';
-import stream from 'stream';
+import csv from 'csv-parser';
 
-const pipeline = promisify(stream.pipeline);
-
-export interface CSVPlan {
+export interface CSVRow {
     account_name: string;
-    percentage: number;
+    percentage: string;
 }
 
-export async function parseCSV(csvFilePath: string): Promise<CSVPlan[]> {
-    let results: CSVPlan[] = [];
+export function parseCSV(filename: string): Promise<CSVRow[]> {
+    const results: CSVRow[] = [];
 
-    await pipeline(
-        fs.createReadStream(csvFilePath),
-        csv(),
-        new stream.Writable({
-            objectMode: true,
-            write(data: CSVPlan, _encoding, callback) {
-                results.push(data);
-                callback();
-            }
-        })
-    );
-
-    return results;
+    return new Promise((resolve, reject) => {
+        fs.createReadStream(filename)
+            .pipe(csv())
+            .on('data', (data) => results.push(data as CSVRow))
+            .on('end', () => resolve(results))
+            .on('error', (error) => reject(error));
+    });
 }
