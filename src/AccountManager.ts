@@ -50,7 +50,6 @@ export class AccountManager {
     async saveData() {
         const data = JSON.stringify(Object.fromEntries(this.accounts.entries()));
         await fs.writeFile(this.filename, data);
-        this.listAccounts();
     }
 
     async addAccount(name: string, amount: number) {
@@ -108,11 +107,15 @@ export class AccountManager {
         const totalInvestment = this.total();
         const actions: Action[] = [];
 
+        let totalPercent = 0;
+
         data.forEach(row => {
             const accountName = row['account_name'];
             const percentage = parseFloat(row['percentage']);
             const targetAmount = (totalInvestment * percentage) / 100;
             const account = this.accounts.get(accountName);
+
+            totalPercent = totalPercent + percentage;
 
             if (account) {
                 const difference = targetAmount - account.amount;
@@ -123,6 +126,8 @@ export class AccountManager {
                 }
             }
         });
+
+        console.log(`Plan adds up to total percent of ${totalPercent}`);
 
         // Sort actions to ensure that all 'sell' actions come before 'buy' actions
         actions.sort((a, b) => {
@@ -138,7 +143,7 @@ export class AccountManager {
     public async plan(filename: string): Promise<void> {
         const actions = await this.generatePlan(filename);
         actions.forEach(action => {
-            console.log(`accounts ${action.type} ${action.accountName} ${action.amount}`);
+            console.log(`${action.type} ${action.accountName} ${action.amount.toFixed(2)}`);
         });
     }
 
@@ -173,6 +178,7 @@ export class AccountManager {
         }
 
         console.log(table.toString());
+        console.log(`Total investment ${this.total()}`);
     }
 
 
