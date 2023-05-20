@@ -7,7 +7,6 @@ Once the code looks good and is actually working to some degree, I might decide 
 Everyting after this point is a prompt for ChatGPT:
 ---
 
-
 Provide a complete implementation of this specification, paying careful attention to the Dave's Requirements, double check that the implementation meets those requirements! First display the projects file and directory structure. Then provide the listings of all files, complete implementations of each and every function.  Do not leave any code for me to write.
 
 # Software Design Document: Account Management Language
