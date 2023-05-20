@@ -1,6 +1,6 @@
 This project was generated almost entirely by ChatGPT4.
 
-It provides a set of commands that you can use to specify a list of accounts and the amount of money in each account, and the to provide a "plan" to redistribute money accross the accounts so that account A has 20%, account B has 30% and etc. Whatever you want. The plan is basically a list of accounts and amounts you should sell, and accounts and amounts you should buy.
+This software provides a set of commands that you can use to specify a list of accounts and the amount of money in each account, and the to provide a "plan" to redistribute money accross the accounts so that account A has 20%, account B has 30% and etc. Whatever you want. The plan is basically a list of accounts and amounts you should sell, and accounts and amounts you should buy.
 
 I've been using ChatGPT to create some personal software projects, nothing for work yet. A pattern that I have found useful is to describe what I want to do in a couple of paragraphs and then ask ChatGPT to create a Software Design Spec for me, in Markdown format. Then, I used some prompts to refine ChatCPT's spec.
  
