@@ -86,7 +86,8 @@ The AML is implemented as a TypeScript project, and the code is organized into a
 * A Jest config MUST be provided in the package.json file
 * The plan and execute command implementations should share almost all logic, particular, calculating the new account balances and creating the actual list of buy and sell operations.
   * When creating a buy/sell plan, all sells must be done first.
-
+* MUST create TUTORIAL.md: a tutorial that shows how to use the AML language implementation provided by the code above, It must show adding accounts, buying and selling, planning and executing rebalances. The tutorial must show an example with at least 4 accounts and a plan.csv file that rebalances those accounts
+   
 ## 5. Future Improvements
 
 Future enhancements could include implementing transaction history, interest calculations, transaction fees, more complex rebalancing strategies, and improved error handling and validation.
