@@ -1,6 +1,6 @@
 This project was generated almost entirely by ChatGPT4.
 
-This software provides a set of commands that you can use to specify a list of accounts and the amount of money in each account, and the to provide a "plan" to redistribute money accross the accounts so that account A has 20%, account B has 30% and etc. Whatever you want. The plan is basically a list of accounts and amounts you should sell, and accounts and amounts you should buy.
+This software provides a set of commands that you can use to specify a list of accounts and the amount of money in each account, and to provide a "plan" to redistribute money accross the accounts so that account A has 20%, account B has 30% and etc. Whatever you want. The plan is basically a list of accounts and amounts you should sell, and accounts and amounts you should buy.
 
 Background
 ---
