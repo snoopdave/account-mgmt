@@ -88,7 +88,7 @@ export class AccountManager {
 
     async buyAmount(name: string, amount: number) {
         if (name === 'cash-on-hand') {
-            console.error('Cannot sell cash-on-hand, that makes no sense');
+            console.error('Cannot buy cash-on-hand, that makes no sense');
             return;
         }
         await this.loadData();
