@@ -13,7 +13,7 @@ Next I ask ChatGPT to implement the spec in a specific language with a build and
 
 Once the code looks good and is partially working, I ask ChatGPT to regenerate the entire project based on the amended spec document. Then I fix errors, debug and continue to amend the original spec from ChatGPT. Rinse and repeat: I iterate on this process until things actually work. For this project, I probably spent 4 hours tweaking the prompt, fussing at ChatGPT and debugging things.
 
-Everyting after this point is a prompt for ChatGPT:
+Everything after this point is a prompt for ChatGPT:
 ---
 
 Provide a complete implementation of this specification, paying careful attention to the Implementation Rules and Specifications section, double check that the implementation meets those requirements! First display the projects file and directory structure. Then provide the listings of all files, complete implementations of each and every function.  Do not leave any code for me to write.
